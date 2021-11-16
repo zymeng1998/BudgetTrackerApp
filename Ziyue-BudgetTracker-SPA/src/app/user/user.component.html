@@ -3,7 +3,7 @@
 <div class="rounded">
     <div class="container-fluid">
         <div class="row">
-            <h2> All Users </h2>
+            <h2> All Users: </h2>
                 <table class="table table-lg">
                     <thead>
                         <tr>
@@ -15,7 +15,7 @@
                       <tbody>
                         <tr *ngFor="let user of allUsers">
                             <td>
-                                <a [routerLink]="[ 'user/detail', user.id ]"> {{user.fullName}} </a>
+                                <a [routerLink]="[ 'user',user.id ]"> {{user.fullName}} </a>
                             </td>
                             <td> {{user.email}} </td>
                             <td>{{user.joinedOn.substr(0, 10)}}</td>
