@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +17,7 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
   imports: [
     HttpClientModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
