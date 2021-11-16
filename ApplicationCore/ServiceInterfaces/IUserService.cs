@@ -1,4 +1,5 @@
 ﻿using ApplicationCore.Entities;
+using ApplicationCore.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace ApplicationCore.ServiceInterfaces
 {
     public interface IUserService
     {
-        Task<List<Expenditure>> GetAllExpenditureByUserId(int Id);
-        Task<List<Income>> GetAllIncomesByUserId(int Id);
+        Task<UserDetailResponseModel> GetUserDetail(int Id);
+        Task<IEnumerable<User>> GetAllUsers();
     }
 }
