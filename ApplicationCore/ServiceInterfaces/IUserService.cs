@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ApplicationCore.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ namespace ApplicationCore.ServiceInterfaces
 {
     public interface IUserService
     {
-        public async Task Add
+        Task<List<Expenditure>> GetAllExpenditureByUserId(int Id);
+        Task<List<Income>> GetAllIncomesByUserId(int Id);
     }
 }

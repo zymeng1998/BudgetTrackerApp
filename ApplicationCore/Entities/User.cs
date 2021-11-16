@@ -13,5 +13,8 @@ namespace ApplicationCore.Entities
         public string Password { get; set; }
         public string? FullName { get; set; }
         public DateTime? JoinedOn { get; set; }
+        //navigational
+        public ICollection<Income> Incomes { get; set; }
+        public ICollection<Expenditure> Expenditures { get; set; }
     }
 }
