@@ -55,6 +55,13 @@ namespace Ziyue.BudgetTrackerApp.API
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Ziyue.BudgetTrackerApp.API v1"));
             }
 
+            app.UseCors(
+                builder =>
+                {
+                    builder.WithOrigins("http://localhost:4200")
+                    .AllowAnyHeader().AllowCredentials().AllowAnyMethod();
+                });
+
             app.UseHttpsRedirection();
 
             app.UseRouting();

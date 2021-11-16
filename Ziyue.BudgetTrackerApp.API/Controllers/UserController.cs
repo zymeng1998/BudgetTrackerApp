@@ -18,13 +18,23 @@ namespace Ziyue.BudgetTrackerApp.API.Controllers
         {
             _userService = userService;
         }
-
+        [HttpGet("")]
+        public async Task<IActionResult> GetAllUsers()
+        {
+            var users = await _userService.GetAllUsers();
+            if (users.Any()) {
+                return Ok(users);
+            }
+            return NotFound("No Users Found");
+        }
         [HttpGet("Detail/{id:int}")]
         // https://localhost/api/user/detail/{id}/
 
-        public async Task<IActionResult> GetUserDetail(int id) {
+        public async Task<IActionResult> GetUserDetail(int id)
+        {
             var userDetailResponse = await _userService.GetUserDetail(id);
-            if (userDetailResponse != null) {
+            if (userDetailResponse != null)
+            {
                 return Ok(userDetailResponse);
             }
             return NotFound("User Not Found");

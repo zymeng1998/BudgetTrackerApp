@@ -1,0 +1,27 @@
+
+<h1>Budget Tracker</h1>
+<div class="rounded">
+    <div class="container-fluid">
+        <div class="row">
+            <h2> All Users </h2>
+                <table class="table table-lg">
+                    <thead>
+                        <tr>
+                          <th scope="col"> User Name </th>
+                          <th scope="col"> User Email </th>
+                          <th scope="col">User Joined Date</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let user of allUsers">
+                            <td>
+                                <a [routerLink]="[ 'user/detail', user.id ]"> {{user.fullName}} </a>
+                            </td>
+                            <td> {{user.email}} </td>
+                            <td>{{user.joinedOn.substr(0, 10)}}</td>
+                        </tr>
+                      </tbody>
+                </table>   
+        </div>
+    </div>
+</div>

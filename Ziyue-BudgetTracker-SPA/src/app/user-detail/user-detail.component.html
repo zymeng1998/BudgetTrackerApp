@@ -1,0 +1,58 @@
+<p>user-detail works!</p>
+<div class="rounded">
+    <div class="container-fluid">
+        <div class="row">
+            <h2> {{userDetail.userId}} </h2>
+        </div>
+        <div>  
+            <h2> Incomes </h2>
+            <table class="table table-lg"> 
+                <thead>
+                    <tr>
+                      <th scope="col"> Income Record ID </th>
+                      <th scope="col"> User ID </th>
+                      <th scope="col"> Amount </th>
+                      <th scope="col"> Description </th>
+                      <th scope="col"> Income Date </th>
+                      <th scope="col"> Remarks </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let income of userDetail.incomes">
+                        <td> {{income.id}} </td>
+                        <td> {{income.userId}} </td>
+                        <td> {{income.amount}} </td>
+                        <td> {{income.description}} </td>
+                        <td> {{income.incomeDate.substr(0,10)}} </td>
+                        <td> {{income.remarks}} </td>
+                    </tr>
+                  </tbody>
+            </table>
+        </div>
+        <div>  
+            <h2> Expenditure </h2>
+            <table class="table table-lg"> 
+                <thead>
+                    <tr>
+                      <th scope="col"> Expenditure Record ID </th>
+                      <th scope="col"> User ID </th>
+                      <th scope="col"> Amount </th>
+                      <th scope="col"> Description </th>
+                      <th scope="col"> Expenditure Date </th>
+                      <th scope="col"> Remarks </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let exp of userDetail.expenditures">
+                        <td> {{exp.id}} </td>
+                        <td> {{exp.userId}} </td>
+                        <td> {{exp.amount}} </td>
+                        <td> {{exp.description}} </td>
+                        <td> {{exp.expDate.substr(0,10)}} </td>
+                        <td> {{exp.remarks}} </td>
+                    </tr>
+                  </tbody>
+            </table>
+        </div>
+    </div>
+</div>
