@@ -31,15 +31,10 @@ namespace Infrastructure.Repositories
             await _dbContext.SaveChangesAsync();
         }
 
-        public async Task<List<T>> List()
+        public async Task<IEnumerable<T>> List()
         {
             var data = await _dbContext.Set<T>().ToListAsync();
             return data;
-        }
-
-        public Task<List<T>> List(T entity)
-        {
-            throw new NotImplementedException();
         }
 
         public async Task<T> Update(T entity)

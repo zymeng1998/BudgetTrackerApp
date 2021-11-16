@@ -11,6 +11,6 @@ namespace ApplicationCore.RepositoryInterfaces
         Task<T> Add(T entity);
         Task<T> Update(T entity);
         Task Delete(T entity);
-        Task<List<T>> List(T entity);
+        Task<IEnumerable<T>> List();
     }
 }
